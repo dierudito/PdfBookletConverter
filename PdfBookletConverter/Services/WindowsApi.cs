@@ -23,8 +23,8 @@ internal static partial class WindowsApi
     internal static partial bool FreeConsole();
 
     // Displays a modal dialog box that contains a system icon, a set of buttons, and a brief application-specific message.
-    [LibraryImport("user32.dll", CharSet = CharSet.Unicode)]
-    internal static extern int MessageBox(IntPtr hWnd, string lpText, string lpCaption, uint uType);
+    [LibraryImport("user32.dll")]
+    internal static partial int MessageBox(IntPtr hWnd, [MarshalAs(UnmanagedType.LPWStr)] string lpText, [MarshalAs(UnmanagedType.LPWStr)] string lpCaption, uint uType);
 
     // Constants for MessageBox uType parameter
     internal const uint MB_OK = 0x00000000;
